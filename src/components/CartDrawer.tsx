@@ -39,8 +39,8 @@ export default function CartDrawer({
         className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between">
+      <div className="fixed inset-y-0 right-0 max-w-full flex w-full sm:w-auto sm:pl-10">
+        <div className="w-full sm:w-screen sm:max-w-md bg-white shadow-2xl flex flex-col justify-between">
           {/* Header */}
           <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
             <div className="flex items-center gap-2.5">
@@ -176,7 +176,7 @@ export default function CartDrawer({
 
           {/* Footer & Checkout button */}
           {cart.length > 0 && (
-            <div className="p-4 sm:p-5 border-t border-slate-200 bg-slate-50/80 space-y-3">
+            <div className="p-4 sm:p-5 pb-8 sm:pb-5 border-t border-slate-200 bg-slate-50/80 space-y-3">
               {/* Savings highlight pill */}
               <div className="p-3 bg-emerald-100/80 border border-emerald-300 rounded-xl flex items-center justify-between text-xs font-bold text-emerald-900">
                 <span className="flex items-center gap-1.5">

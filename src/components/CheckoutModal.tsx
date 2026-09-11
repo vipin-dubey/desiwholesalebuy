@@ -97,17 +97,17 @@ export default function CheckoutModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white w-full max-w-xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-white w-full max-w-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[94vh]">
         {/* Header */}
-        <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-md font-bold">
+        <div className="p-3.5 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-md font-bold text-base sm:text-lg">
               📦
             </div>
             <div>
-              <h3 className="font-extrabold text-lg text-slate-900">Confirm Bulk Club Order</h3>
-              <p className="text-xs text-slate-500">
+              <h3 className="font-extrabold text-base sm:text-lg text-slate-900">Confirm Bulk Club Order</h3>
+              <p className="text-[11px] sm:text-xs text-slate-500 truncate max-w-[200px] sm:max-w-none">
                 Delivered to {building.name} • {building.nextDeliveryDate}
               </p>
             </div>
@@ -121,56 +121,56 @@ export default function CheckoutModal({
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-5 overflow-y-auto space-y-4 flex-1">
+        <form onSubmit={handleSubmit} className="p-3.5 sm:p-5 overflow-y-auto space-y-3.5 sm:space-y-4 flex-1">
           {/* Quick order summary banner */}
-          <div className="p-3.5 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-between text-xs">
+          <div className="p-3 bg-amber-50 rounded-xl sm:rounded-2xl border border-amber-200 flex items-center justify-between text-xs">
             <div>
-              <div className="font-black text-amber-950 text-sm">{totalAmount} kr</div>
-              <div className="text-slate-600">
+              <div className="font-black text-amber-950 text-base sm:text-sm">{totalAmount} kr</div>
+              <div className="text-slate-600 text-[11px] sm:text-xs">
                 {totalItems} items • {totalWeight.toFixed(1)} kg total weight
               </div>
             </div>
             <div className="text-right">
-              <span className="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-lg">
-                <Sparkles className="w-3 h-3" /> You save {totalSavings} kr
+              <span className="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 sm:py-1 rounded-lg text-[11px] sm:text-xs">
+                <Sparkles className="w-3 h-3" /> Save {totalSavings} kr
               </span>
             </div>
           </div>
 
           {/* Customer Personal Details */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+          <div className="space-y-2.5 sm:space-y-3">
+            <h4 className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
               <User className="w-3.5 h-3.5 text-amber-600" />
               <span>Contact Information</span>
             </h4>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">First Name *</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">First Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Amit"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-900"
+                  className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-sm text-slate-900"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Last Name *</label>
+                <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">Last Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Sharma"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-900"
+                  className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-sm text-slate-900"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                 Norwegian Mobile Phone (+47) *
               </label>
               <div className="relative">
@@ -183,37 +183,37 @@ export default function CheckoutModal({
                   placeholder="912 34 567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full pl-12 pr-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-900 font-medium"
+                  className="w-full pl-12 pr-3.5 py-2 sm:py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-sm text-slate-900 font-medium"
                 />
               </div>
-              <p className="text-[11px] text-slate-400 mt-1">
+              <p className="text-[10px] sm:text-[11px] text-slate-400 mt-1">
                 We will send an SMS 15 minutes before the delivery van arrives at your building entrance on Saturday.
               </p>
             </div>
           </div>
 
           {/* Delivery & Apartment Details */}
-          <div className="space-y-3 pt-2 border-t border-slate-100">
-            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+          <div className="space-y-2.5 sm:space-y-3 pt-2 border-t border-slate-100">
+            <h4 className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
               <Home className="w-3.5 h-3.5 text-amber-600" />
-              <span>Building & Drop Details</span>
+              <span>Building &amp; Drop Details</span>
             </h4>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                 Building Complex
               </label>
               <input
                 type="text"
                 disabled
                 value={building.name}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-700 font-semibold"
+                className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-base sm:text-sm text-slate-700 font-semibold"
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                   Apartment / Door / Entrance *
                 </label>
                 <input
@@ -222,37 +222,37 @@ export default function CheckoutModal({
                   placeholder="e.g. Apt 402, Entrance B"
                   value={apartmentNumber}
                   onChange={(e) => setApartmentNumber(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-900"
+                  className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-sm text-slate-900"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                   Street Address
                 </label>
                 <input
                   type="text"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm text-slate-900"
+                  className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-sm text-slate-900"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                 Pickup Window
               </label>
               <input
                 type="text"
                 disabled
                 value={deliverySlot}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-700 font-medium"
+                className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-700 font-medium"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1">
                 Delivery Notes (Optional)
               </label>
               <textarea
@@ -260,7 +260,7 @@ export default function CheckoutModal({
                 placeholder="e.g. Will come down with my own shopping trolley, or ring buzzer upon arrival."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-xs text-slate-900"
+                className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-base sm:text-xs text-slate-900"
               />
             </div>
           </div>
